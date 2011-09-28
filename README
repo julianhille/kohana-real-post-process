@@ -26,5 +26,11 @@ read the usage part.
 	The controller got extended and you can now set a variable $this->post_process to true and the before function does everything for you.
 	If you dont know, if your controller needs to process something in the destruct function, then you can also
 	add it by your own in any function by calling: $this->post_process();
+
+## Installation
 	
+	As always in koahana you need to check this module out to "realpostprocess" and add to your bootstrap at the modules part:
+	'realpostprocess'=>MODPATH.'realpostprocess'. Thats it!
+
+
 Any enhancements are welcome.
