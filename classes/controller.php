@@ -16,7 +16,7 @@ abstract class Controller extends Kohana_Controller {
 	public function before() {
 		
 		if($this->post_process === true)
-			realpostprocess::add_object($this);
+			$this->post_process();
 		
 		parent::before();
 	}
