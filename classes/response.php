@@ -22,20 +22,17 @@ class Response extends Kohana_Response {
 		
 		if (isset($_SERVER['HTTP_ACCEPT_ENCODING']) AND strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') !== FALSE)
 		{
-			//echo $_SERVER['HTTP_ACCEPT_ENCODING'];
-	
 			$compressed = gzencode ($text, 5);
-			//print $compressed;
 			header('Content-Encoding: gzip');
 			header('Content-Length: ' . strlen($compressed));
-			echo $compressed.gzencode(str_repeat(' ', 10));
+			echo $compressed;
 		}
 		elseif (isset($_SERVER['HTTP_ACCEPT_ENCODING']) AND strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'deflate') !== FALSE)
 		{
 			$compressed = gzdeflate($text, 5);
 			header('Content-Encoding: deflate');
 			header('Content-Length: ' . strlen($compressed));
-			echo $compressed.gzdeflate(str_repeat(' ', 10));
+			echo $compresse;
 		}
 		else
 		{
